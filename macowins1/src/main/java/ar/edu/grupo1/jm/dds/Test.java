@@ -7,14 +7,23 @@ public class Test {
 		
 		Negocio macowins= new Negocio();
 		
-		Pantalon pantalon= new Pantalon();
-		Camisa camisa= new Camisa();
-		Saco saco=new Saco();
+		Armani armani= new Armani();
+		Sarkany sarkany= new Sarkany();
+		
+		Pantalon pantalon= new Pantalon(armani,100);
+		Camisa camisa= new Camisa(armani);
+		Saco saco=new Saco(armani,3);
+		Zapato zapato= new Zapato(sarkany,38);
+		Sombrero sombrero= new Sombrero(armani,50);
 		saco.esImportado(true);
+		sombrero.esImportado(true);
 		
 		macowins.agregarVenta(pantalon,2,30,03,2015);
 		macowins.agregarVenta(camisa,5,01,01,2015);
 		macowins.agregarVenta(saco,1,30,03,2015);
+		macowins.agregarVenta(zapato,1,30,03,2015);
+		macowins.agregarVenta(sombrero,1,01,01,2015);
+		
 		
 		Scanner entrada= new Scanner(System.in);
 		System.out.print("Ingrese dia: ");

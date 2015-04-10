@@ -2,10 +2,15 @@ package ar.edu.grupo1.jm.dds;
 
 public class Saco extends Prenda {
 
-	private static int precioBase=300;
+	private double botones;
 	
-	public double precioFinal(){
-		return (valorFijo()+precioBase)*this.tasaImportacion();
+	public Saco(Marca marca, double botones){
+		super(marca);
+		this.botones=botones;
+	}
+	
+	public double precioBase(){
+		return 300 + 10*botones;
 	}
 	
 }

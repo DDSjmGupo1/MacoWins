@@ -4,9 +4,12 @@ public abstract class Prenda {
 
 	private static double valorFijo=100;
 	private boolean esImportado;
+	private Marca marca;
+
 	
-	public Prenda(){
+	public Prenda(Marca marca){
 		esImportado=false;
+		this.marca=marca;
 	}
 		
 	public void esImportado(boolean esImportado){
@@ -26,6 +29,13 @@ public abstract class Prenda {
 		}
 	}
 	
-	public abstract double precioFinal();
+	public double precioFinal(){
+		return preciOriginal()*marca.coeficienteMarca(preciOriginal());
+	}
 	
+	public double preciOriginal(){
+		return (valorFijo+precioBase())*tasaImportacion();
+	}
+	
+	public abstract double precioBase();
 }
