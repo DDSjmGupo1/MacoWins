@@ -30,7 +30,7 @@ public class Test {
 		int dia= Integer.parseInt(entrada.nextLine());
 		System.out.print("Ingrese mes: ");
 		int mes= Integer.parseInt(entrada.nextLine());
-		System.out.print("Ingrese a�o: ");
+		System.out.print("Ingrese año: ");
 		int anio= Integer.parseInt(entrada.nextLine());
 		entrada.close();
 		

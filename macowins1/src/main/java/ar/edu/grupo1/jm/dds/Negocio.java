@@ -1,5 +1,6 @@
 package ar.edu.grupo1.jm.dds;
 import java.util.*;
+import java.util.stream.*;
 
 
 public class Negocio {
@@ -17,21 +18,11 @@ public class Negocio {
 	
 	public double gananciasDelDia(int dia, int mes, int anio){
 		
-		/*
-		Set<Double> ganancias= listaVentas.stream().filter(venta -> venta.dia()==diaa).map(venta -> venta.precioVenta()).collect(Collectors.toSet());
 		
-		return ganancias;
-		*/
-
-		double ganancias=0;
+		Stream<Venta> ventasDelDia= listaVentas.stream().filter(venta -> (venta.dia()==dia)&&(venta.mes()==mes)&&(venta.anio()==anio));
 		
-		for(Venta venta: listaVentas){
-			if (venta.anio()==anio && venta.mes()==mes && venta.dia()==dia){
-				ganancias+=venta.precioVenta();
-			}
+		double ganancias= ventasDelDia.mapToDouble(venta -> venta.precioVenta()).sum();
 		
-		}
-			
 		return ganancias;
 		
 	}
