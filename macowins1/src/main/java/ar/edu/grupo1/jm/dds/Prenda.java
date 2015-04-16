@@ -29,7 +29,7 @@ public abstract class Prenda {
 		}
 	}
 	
-	public double precioFinal(){
+	public Double precioFinal(){
 		return preciOriginal()*marca.coeficienteMarca(preciOriginal());
 	}
 	
